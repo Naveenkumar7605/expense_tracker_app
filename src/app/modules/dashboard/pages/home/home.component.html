@@ -1,0 +1,60 @@
+<div class="w-full flex justify-center flex-row items-center"
+    style="justify-content: center;align-items: center;text-align: center;">
+    <div class="w-2/5 xs:w-4/5 space-y-3">
+        <div>
+            <div style="color: gray;font-size: 15px;margin-bottom: 7px;">Accout Balance</div>
+            <h1>{{total_balance| currency:'INR'}}</h1>
+        </div>
+        <div class="space-y-4">
+            <ul class="flex flex-row justify-between">
+            <ng-container *ngFor="let item of TMY">
+                <button mat-button
+                    class="  p-2 text-gray-400 focus:bg-rose-100 focus:text-yellow-500  first:bg-rose-100 first:text-yellow-500 cursor-pointer"
+                    style="padding: 1px 10px;border-radius: 50px;"
+                     (click)="recent_transaction_history(item.id)">{{item.name}}</button>
+            </ng-container>
+            </ul>
+            <div style="display: flex;flex-direction: row;justify-content: space-between; ">
+                <div style="font-weight: 500;">Recent Transation</div>
+                <div
+                    style="color: purple;background-color: rgba(128, 128, 128, 0.192);padding: 4px 10px;border-radius: 50px;cursor: pointer;">
+                    <button [routerLink]="['/dashboard/transaction']" routerLinkActive="router-link-active" >
+                        See All
+                    </button>
+                </div>
+            </div>
+            <div *ngFor="let item of records" class="card-item">
+                <div class="flex flex-col items-baseline">
+                    <div style="font-size: 14px;font-weight: 400;">
+                        {{item.category}}
+                    </div>
+                    <div style="font-size: 10px;color: rgba(0, 0, 255, 0.658);">{{item.bank_name}}</div>
+                    <div style="font-size: 11px;color: rgb(128, 124, 124);">
+                        {{item.desc}}
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <div [ngStyle]="{'color': item.flag == 1?'green':'red'}" style="font-size: 12px;">
+                        <span *ngIf="item.flag == 1">+ </span> <span *ngIf="item.flag == 0">- </span>{{item.amount | currency:'INR'}}
+                    </div>
+                    <div style="font-weight: 400;font-size: 11px;color: rgb(128, 124, 124);">
+                        {{item.date}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-row justify-center">
+            <div class="ml-2 flex gap-2 flex-row">
+                <!-- <button (click)="openTransaction()" class="bg-purple-600 p-2 text-white" style="font-size: 20px;width: 40px;border-radius: 50%;">
+                    <i class="fa fa-plus" aria-hidden="true" ></i>
+                </button> -->
+
+                <button (click)="openTransaction()" class="bg-purple-600 p-2  text-white" style="border-radius: 10px;font-size: 12px;" >
+                    Add Transaction
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

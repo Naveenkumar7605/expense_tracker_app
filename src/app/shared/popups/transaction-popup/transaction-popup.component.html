@@ -1,0 +1,84 @@
+
+
+
+<div class="w-full flex flex-col ">
+  <div style="display: flex ;justify-content: end;flex-direction: row;padding: 2px;">
+    <div (click)="close()" class="cursor-pointer">
+      <i class="fa fa-times" aria-hidden="true" style="font-size: 20px;" ></i>
+    </div>
+  </div>
+  <div class="p-2" >
+    <div class="w-full flex flex-row " style="border:1px solid gray;border-top-left-radius:10px;border-top-right-radius:10px;overflow:hidden;color:#6d6464">
+      <div class="w-1/2 p-2"  [ngClass]="flag==1?'bg-[#008000d4] text-white':'bg-gray-100'">
+        <button class="w-full" (click)="changeTransaction(1)">income</button>
+      </div>
+      <div class="w-1/2 p-2" [ngClass]="flag==0?'bg-[#c9435acc] text-white':'bg-gray-100'">
+        <button class="w-full" (click)="changeTransaction(0)">expense</button>
+      </div>
+
+
+    </div>
+    <form [formGroup]="form"  >
+      <div class="main-dialog" [ngStyle]="{background:flag==1
+          ?'#008000d4':'#c9435acc' }">
+
+        <div style="color: white;text-align: center;padding-top: 10px;">{{total_amount | currency:'INR'}}</div>
+
+        <div class="text-white   left-1" style="top: 60px;position:absolute;left: 10px;">
+          <div style="font-size: 13px;">How much?</div>
+          <div style="font-size: 16px;margin-top: 5px;">
+            <span style="color: white;">₹ </span>
+            <input type="text" placeholder="enter amout" formControlName="amount"
+                   style="color: black;background-color: transparent;border-bottom: 2px solid rgb(27, 189, 148);outline: none;color: white;">
+          </div>
+        </div>
+        <div class="foot flex flex-col  justify-center">
+          <div class="w-full" style="margin-top: 15px;">
+            <mat-form-field class="w-full">
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+          </div>
+               
+          <div class="w-full">
+            <mat-form-field class="w-full">
+              <mat-label>Account</mat-label>
+              <mat-select formControlName="bank" (selectionChange)="selectBank($event)">
+                <ng-container *ngFor="let item of linked_bank_accounts">
+                  <mat-option [value]="item.id">{{item.name}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="w-full">
+            <mat-form-field class="w-full">
+              <mat-label>Category</mat-label>
+              <mat-select formControlName="category">
+                <ng-container *ngFor="let item of categories">
+                  <mat-option [value]="item.name">{{item.name}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="w-full ">
+            <mat-form-field appearence="outline" class="w-full">
+              <mat-label>Description</mat-label>
+              <input matInput formControlName="desc">
+            </mat-form-field>
+          </div>
+
+     
+          <div class="w-full p-2">
+            <button mat-button class="bg-purple-500 p-1 w-full text-white"
+                    [disabled]="disbled_submit_btn" (click)="submit()">submit</button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

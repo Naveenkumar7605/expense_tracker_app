@@ -1,0 +1,67 @@
+
+
+<form [formGroup]="form">
+    <div class="w-full flex justify-center flex-row items-center"
+        style="justify-content: center;align-items: center;text-align: center;">
+        <div class="w-2/5 xs:w-4/5 space-y-3">
+            <div style="float: start;"> {{total_balance|currency:"INR"}}</div>
+            <div class="w-full flex flex-row justify-center items-center">
+                    <div >
+                        <div  class="bg-slate-300 space-x-3 overflow-hidden" style="border-radius: 40px;">
+                            <button mat-button class=" focus:bg-purple-600 rounded-full focus:text-white" style="padding:'5px 15px';border-radius:40px" (click)="expense()" [ngClass]="default_select_btn==1?'bg-purple-600 text-white':'bg-none text-black'">Expense</button>
+                            <button mat-button class=" focus:bg-purple-600 rounded-full focus:text-white" style="padding:'5px 15px';border-radius:40px" (click)="income()" [ngClass]="default_select_btn==2?'bg-purple-600 text-white':'bg-none text-black'">Income</button>
+                        </div>
+
+                    </div>
+            </div>
+
+            <div *ngIf="canvas_visible">
+                <canvasjs-chart [options]="chartOptions" height="200" ></canvasjs-chart>
+            </div>
+            <div class="flex flex-row justify-between items-center">
+                <div class="w-[100px]">
+                    <mat-form-field class="w-full">
+                        <mat-select formControlName="year" (selectionChange)="selectType($event)">
+                            <mat-option value="1">Transaction</mat-option>
+                            <mat-option value="2">Category</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+                <div style="height: 29px" class="cursor-pointer hover:bg-gray-300 p-2 rounded-full" (click)="order_data()">
+                     <img src="../../../../../assets/images/sort highest lowest.png" style="height: 100%;width: 100%;" class="w-full h-full"/>
+                </div>
+
+            </div>
+            <div *ngFor="let item of transaction_data" class="card-item">
+                <div class="flex flex-col items-baseline">
+                    <div style="font-size: 14px;font-weight: 400;">
+                        {{item.category}}
+                    </div>
+                    <div style="font-size: 10px;color: rgba(0, 0, 255, 0.658);">{{item.bank_name}}</div>
+                    <div style="font-size: 11px;color: rgb(128, 124, 124);">
+                        {{item.desc}}
+                    </div>
+                </div>
+                <div class="flex flex-col" *ngIf="item.cat ==0">
+                    <div [ngStyle]="{'color': item.flag == 1?'green':'red'}" style="font-size: 12px;">
+                        <span *ngIf="item.flag == 1">+ </span> <span *ngIf="item.flag == 0">- </span>{{item.amount| currency:'INR'}}
+                    </div>
+                    <div style="font-weight: 400;font-size: 11px;color: rgb(128, 124, 124);">
+                        {{item.date}}
+                    </div>
+                </div>
+
+                <div *ngIf="item.cat == 1" style="font-size: 12px">
+                    Total : <span style="color:green">{{item.amount | currency:'INR' }}</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</form>
+
+

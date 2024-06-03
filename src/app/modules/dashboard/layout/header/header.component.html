@@ -1,0 +1,62 @@
+<div class="flex flex-row justify-between items-center bg-gray-200 px-1 py-2" style="position:fixed;z-index:1;width:100%;top:0">
+   <div class="h-[30px] w-[30px] xs:h-[20px] xs:w-[20px]" [matTooltip]="'home'">
+    <a [routerLink]="['home']" >
+      <img src="../../../../../assets/sacumensecurity_logo.png" style="height:100%;width:100%"  routerLinkActive="router-link-active" >
+    </a>
+   </div>
+  <div>
+    <ul class="flex flex-row justify-center items-center" style="gap: 20px;" (click)="url_change()">
+      <ng-container *ngFor="let item of menus">
+        <li style="cursor: pointer;" [routerLink]="item.path"
+          [ngClass]="item.is_active?'text-green-400':'text-gray-400'" [matTooltip]="item.name">
+          <mat-icon>
+            {{item.icon_name}}
+          </mat-icon>
+        </li>
+      </ng-container>
+      <li>
+        <div class="h-[30px] w-[30px] xs:h-[20px] xs:w-[20px] rounded-full"
+             style="cursor: pointer;border-radius: 20px;overflow: hidden;">
+          <img [src]="img_src" class="w-full h-full" (click)="show()" [matTooltip]="'profile'"/>
+        </div>
+        <div *ngIf="side_nav"
+             style="height:calc(100vh - 10px);width: 160px;display: block;box-shadow:-3px 4px 5px 1px rgba(128, 128, 128, 0.332) ;background-color: white; position: absolute;right: 2px;z-index: 1;top: 0;padding: 10px;;border-radius: 3px">
+          <div style="cursor: pointer;">
+            <div>
+              <i class="fa fa-times" aria-hidden="true" style="font-size: 20px;color:#00000061"
+                 (click)="hide()"></i>
+            </div>
+
+            <div class="space-y-7">
+              <div
+                style="display: flex;flex-direction: column;justify-content: center;align-items: center;gap: 10px;">
+                <div class=" flex flex-row gap-3 cursor-default">
+                  <div class="h-10 w-10 rounded-full" style="transition: 2s;border-radius: 20px;overflow: hidden;">
+                    <img [src]="img_src" class="w-full h-full" (click)="show()" />
+                  </div>
+                  <div class="h-full">
+                    <div class="text-[10px] text-black">
+                      user name
+                    </div>
+                    <div class="text-[12px] text-black font-bold">
+                      {{user_name}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full flex flex-col gap-4">
+                <div class="flex hover:text-purple-600 cursor-pointer" (click)="openProfile()">
+                  <i class="fa fa-user hover:text-purple-600" aria-hidden="true" style="font-size: 20px;"></i> <span
+                  style="margin-left: 0.5em;font-size: 13px;" class=" text-gray-400">Profile</span></div>
+                <div class="flex hover:text-purple-600 cursor-pointer" (click)="logout()">
+                  <i class="fa fa-sign-out hover:text-purple-600" aria-hidden="true" style="font-size: 20px;"></i>
+                  <span class=" text-gray-400 " style="margin-left: 0.4em;font-size: 13px;">logout</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>

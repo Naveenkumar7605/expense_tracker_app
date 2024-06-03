@@ -1,0 +1,21 @@
+.circles{
+    @apply flex flex-row gap-2 items-center;
+    height: 20px;
+    .circle{
+        height: 15px;
+        padding: 1px;
+        width: 15px;
+        background-color: rgba(128, 0, 128, 0.205);
+        border-radius: 50%;
+        transition: 1s;
+    }
+}
+
+.active_dot{
+   background-color: purple !important;
+}
+.deactive_dot{
+    height: 10px !important;
+    width: 10px !important;
+    background-color: rgba(128, 0, 128, 0.205) !important;
+}

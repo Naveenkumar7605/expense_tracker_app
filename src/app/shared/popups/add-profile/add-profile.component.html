@@ -1,0 +1,37 @@
+<div>
+    <div class="flex flex-col ">
+        <div style="font-size: 26px;right: 0px;cursor: pointer" mat-dialog-close (click)="close()">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+            <div class="img_loader">
+                <div   style="height: 100%;width: 100%;position: relative;" *ngIf="open_type == 0">
+                    <img #img crossorigin="anonymous" style="height: 100%;width: 100%;object-fit: contain;"/>
+                    <div style="position: absolute;right: 5px;top: 5px;cursor: pointer;" (click)="deleteImage()" *ngIf="show_delete_btn">
+                        <i class="fa fa-trash" style="color: rgba(255, 0, 0, 0.719);font-size: 20px;"  aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div   style="height: 100%;width: 100%;position: relative;" *ngIf="open_type == 1">
+                    <video #video class="w-full h-full bg-gray-400"  autoplay></video>
+                    <div  class="h-[30px] w-[30px] rounded-full bg-red-400 absolute left-[44%] bottom-3"></div>
+                </div>
+            </div>
+            <div class="flex flex-row justify-between" style="margin-top: 10px;">
+                <div>
+                    <mat-icon style="font-size: 40px;width: 50px;height: 50px;cursor: pointer;" class="text-gray-500 hover:text-purple-500" matTooltip="open camera" (click)="openCamera()">camera_enhance</mat-icon>
+                </div>
+                <div>
+                    <input id="file_open" type="file" (change)="openFileManager($event)" style="display: none;" accept=".jpg,.png,.jpeg">
+                    <label for="file_open">
+                        <mat-icon style="font-size: 40px;width: 50px;height: 50px;cursor: pointer" matTooltip="upload from gallery" class="text-gray-500 hover:text-purple-500" >image</mat-icon>
+                    </label>
+                </div>
+            </div>
+        <div>
+          <button mat-button (click)="save()" class="bg-green-400 text-gray-700">save</button>
+        </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+
+
+<div class="w-full">
+  <header class="w-full fixed top-0 z-10 bg-gray-50 p-1" >
+    <div class="h-[40px] w-[40px] xs:h-[20px] xs:w-[20px]" >
+      <img src="../../../../../assets/sacumensecurity_logo.png" style="height:100%;width:100%">
+    </div>
+  </header>
+  <div class="w-full h-full flex flex-row justify-center items-center"  style="height:100vh">
+    <form [formGroup]="form">
+      <div class="w-[250px] flex flex-col justify-center items-center gap-4">
+        <h2 class="text-gray-600">Login</h2>
+        <div class="flex flex-col gap-2 w-full">
+          <div>
+            <input mat-input type="email" placeholder="Email" class="form-field" required  formControlName="email"/>
+          </div>
+          <div>
+            <input mat-input type="password" placeholder="Password" class="form-field" required formControlName="password"/>
+          </div>
+        </div>
+        <div class="w-full">
+          <button (click)="login()" mat-button [disabled]="is_invalid" class="w-full bg-purple-600 text-white p-2 focus:bg-purple-500 focus:text-white"
+                  style="border-radius: 2em;font-weight:500">Login</button>
+        </div>
+        <p class="text-gray-400 font-[12px]">Don’t have an account yet?
+          <span class="underline text-purple-600 indent-1 cursor-pointer active:text-blue-500 select-none"> <a [routerLink]="['/verify/signup']" routerLinkActive="router-link-active" > Sign Up</a></span>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

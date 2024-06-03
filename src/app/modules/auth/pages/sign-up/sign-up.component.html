@@ -1,0 +1,59 @@
+
+
+<div class="w-full">
+  <header class="w-full fixed top-0 z-10 bg-gray-50 p-1">
+    <div class="h-[40px] w-[40px] xs:h-[20px] xs:w-[20px]" >
+      <img src="../../../../../assets/sacumensecurity_logo.png" style="height:100%;width:100%">
+    </div>
+  </header>
+<!--  <div style="height:300px;width:300px;position:absolute;z-index:-1;bottom:0">-->
+
+<!--    <img src="../../../../../assets/vector/Forgot%20password-amico.svg" style="width:100%;height:100%"/>-->
+<!--  </div>-->
+  <div class="w-full h-full flex flex-row justify-center items-center" style="height:100vh">
+
+    <form [formGroup]="form">
+      <div class="w-[250px] flex flex-col justify-center items-center gap-4">
+        <h2 class="text-gray-600">Sign Up</h2>
+        <div class="flex flex-col gap-2 w-full">
+          <div>
+            <input matInput type="text" placeholder="Name" class="form-field" required formControlName="name"
+                   [ngStyle]="{border: form.controls['name'].valid?'1px solid #17b617':'1px solid rgb(247 71 71 / 61%)'}"/>
+          </div>
+          <div>
+            <input matInput type="email" placeholder="Email" class="form-field" required
+                   formControlName="email" [ngStyle]="{border: form.controls['email'].valid?'1px solid #17b617':'1px solid rgb(247 71 71 / 61%)'}"/>
+          </div>
+          <div>
+            <input matInput type="password" placeholder="Password" class="form-field" required
+                   formControlName="password" [ngStyle]="{border: form.controls['password'].valid?'1px solid #17b617':'1px solid rgb(247 71 71 / 61%)'}"/>
+          </div>
+          <div>
+            <input matInput type="text" placeholder="Mobile Number" class="form-field" required
+                   formControlName="mobno" [ngStyle]="{border: form.controls['mobno'].valid?'1px solid #17b617':'1px solid rgb(247 71 71 / 61%)'}"/>
+          </div>
+        </div>
+        <div class="w-full">
+          <button mat-button [disabled]="is_invalid" mat-btn
+                  class="w-full bg-purple-600 text-white p-2 focus:bg-purple-500 focus:text-white"
+                  style="border-radius: 2em;font-weight:500" (click)="sign_up()">Sign Up</button>
+        </div>
+
+        <div class="flex flex-row justify-center items-center gap-2">
+                <span class="example-list-section">
+                    <mat-checkbox [checked]="true" formControlName="policy">
+                    </mat-checkbox>
+                </span>
+          <div style="font-size: 10px;line-height: 1.4;">By signing up, you agree to the <span
+            class="text-purple-500">Terms of Service
+                        and Privacy Policy</span></div>
+
+        </div>
+        <p class="text-gray-400 font-[12px]">Already have an account?
+          <span class="underline text-purple-600 indent-1 cursor-pointer active:text-blue-500 select-none"
+                [routerLink]="['/verify/login']"> <a> Login</a></span>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
