@@ -1,0 +1,39 @@
+
+<div class="w-full">
+  <header class="w-full fixed top-0 z-10 bg-gray-100 p-1">
+    <div class="h-[40px] w-[40px] xs:h-[20px] xs:w-[20px]" >
+      <img src="../../../../../assets/sacumensecurity_logo.png" style="height:100%;width:100%">
+    </div>
+  </header>
+
+  <div class="w-full h-full flex flex-row justify-center items-center" style="height:100vh">
+    <div class="w-[250px]">
+      <div class="w-full overflow-hidden space-y-2" #carasoul>
+        <div class="flex flex-row w-full relative carasoul" >
+          <div class=" flex flex-col justify-center items-center w-full gap-2" *ngFor="let item of data" style="padding: 10px;text-align: center;">
+            <div style="height: 250px;width: 250px;" >
+              <img [src]="item.img" style="height: 100%;width: 100%;" *ngIf="item.img!=''">
+            </div>
+            <div style="font-weight: 400;">{{item.head}}</div>
+            <div style="font-size: 10px;" class="text-gray-400">
+              {{item.content}}
+            </div>
+          </div>
+        </div>
+        <div class="w-full flex flex-row justify-center">
+          <div class="circles">
+            <div class="circle" [ngClass]="count == 0 ?'active_dot':'deactive_dot'"></div>
+            <div class="circle" [ngClass]="count == 1 ?'active_dot':'deactive_dot'"></div>
+            <div class="circle" [ngClass]="count == 2 ?'active_dot':'deactive_dot'"></div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 text-white">
+          <button mat-btn class="w-full bg-gray-200 text-purple-600 p-2 focus:bg-blue-600 focus:text-white" style="border-radius: 2em;font-weight:500" (click)="sign_up()">Sign Up</button>
+          <button mat-btn class="w-full bg-gray-200 text-purple-600 p-2 focus:bg-blue-600 focus:text-white" style="border-radius: 2em;font-weight:500" (click)="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

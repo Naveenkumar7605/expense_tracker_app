@@ -1,0 +1,343 @@
+{
+  "users": [
+    {
+      "contact": {
+        "user_name": "Madhan",
+        "email": "madhan@gmail.com",
+        "password": "madhan",
+        "mobile_no": "6747365734",
+        "src": null
+      },
+      "account_ids": [
+        1,
+        2
+      ],
+      "transaction_ids": [
+        2,
+        3
+      ],
+      "id": 1
+    },
+    {
+      "contact": {
+        "user_name": "Naveen",
+        "email": "naveen@gmail.com",
+        "password": "7605",
+        "mobile_no": "7567365736",
+        "src": null
+      },
+      "account_ids": [
+        3,
+        5
+      ],
+      "transaction_ids": [
+        1,
+        4
+      ],
+      "id": 2
+    },
+    {
+      "contact": {
+        "user_name": "srinath",
+        "email": "srinath@gmail.com",
+        "password": "1234",
+        "mobile_no": "3756743653",
+        "src": null
+      },
+      "account_ids": [
+        4
+      ],
+      "transaction_ids": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "id": 3
+    }
+  ],
+  "accounts": [
+    {
+      "account_no": "786575675686",
+      "cardholder_name": "madhan#hdfc",
+      "bank": 1,
+      "balance": 9000,
+      "user_id": 1,
+      "id": 1
+    },
+    {
+      "account_no": "876474365746",
+      "cardholder_name": "madhan#sbi",
+      "bank": 2,
+      "balance": 4450,
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "account_no": "764726487267",
+      "cardholder_name": "naveen#andhra",
+      "bank": 5,
+      "balance": 7900,
+      "user_id": 2,
+      "id": 3
+    },
+    {
+      "account_no": "323232323232",
+      "cardholder_name": "srinath#sbi",
+      "bank": 2,
+      "balance": 33179,
+      "user_id": 3,
+      "id": 4
+    },
+    {
+      "account_no": "333333333333",
+      "cardholder_name": "naveen#axis",
+      "bank": 3,
+      "balance": 0,
+      "user_id": 2,
+      "id": 5
+    }
+  ],
+  "transactions": [
+    {
+      "amount": "7800",
+      "category": "Government Benefits",
+      "desc": "intern incom",
+      "bank": 5,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 2,
+      "id": 1
+    },
+    {
+      "amount": "4450",
+      "category": "Freelance",
+      "desc": "bug fixed payment",
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "amount": "9000",
+      "category": "Investment Income",
+      "desc": "Trading market investment",
+      "bank": 1,
+      "flag": 1,
+      "datetime": "2024-06-11T18:30:00.000Z",
+      "user_id": 1,
+      "id": 3
+    },
+    {
+      "amount": "100",
+      "category": "Salary",
+      "desc": null,
+      "bank": 5,
+      "flag": 1,
+      "datetime": "2024-06-13T18:30:00.000Z",
+      "user_id": 2,
+      "id": 4
+    },
+    {
+      "amount": "1000",
+      "category": "Salary",
+      "desc": null,
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 5
+    },
+    {
+      "amount": "14500",
+      "category": "Business Income",
+      "desc": null,
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 6
+    },
+    {
+      "amount": "10000",
+      "category": "Government Benefits",
+      "desc": null,
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 7
+    },
+    {
+      "amount": "3434",
+      "category": "Investment Income",
+      "desc": null,
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 8
+    },
+    {
+      "amount": "300",
+      "category": "Entertainment",
+      "desc": null,
+      "bank": 2,
+      "flag": 0,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 9
+    },
+    {
+      "amount": "2000",
+      "category": "Business Income",
+      "desc": null,
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 10
+    },
+    {
+      "amount": "01000",
+      "category": "Personal Care",
+      "desc": null,
+      "bank": 2,
+      "flag": 0,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 11
+    },
+    {
+      "amount": "2000",
+      "category": "Government Benefits",
+      "desc": null,
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-05-09T18:30:00.000Z",
+      "user_id": 3,
+      "id": 12
+    },
+    {
+      "amount": "2000",
+      "category": "Government Benefits",
+      "desc": null,
+      "bank": 2,
+      "flag": 1,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 13
+    },
+    {
+      "amount": "455",
+      "category": "Entertainment",
+      "desc": null,
+      "bank": 2,
+      "flag": 0,
+      "datetime": "2024-06-12T18:30:00.000Z",
+      "user_id": 3,
+      "id": 14
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Housing",
+      "type": 0
+    },
+    {
+      "id": 2,
+      "name": "Transportation",
+      "type": 0
+    },
+    {
+      "id": 3,
+      "name": "Food",
+      "type": 0
+    },
+    {
+      "id": 4,
+      "name": "Healthcare",
+      "type": 0
+    },
+    {
+      "id": 5,
+      "name": "Personal Care",
+      "type": 0
+    },
+    {
+      "id": 6,
+      "name": "Entertainment",
+      "type": 0
+    },
+    {
+      "id": 7,
+      "name": "Education",
+      "type": 0
+    },
+    {
+      "id": 8,
+      "name": "Children",
+      "type": 0
+    },
+    {
+      "id": 1,
+      "name": "Salary",
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "Freelance",
+      "type": 1
+    },
+    {
+      "id": 3,
+      "name": "Investment Income",
+      "type": 1
+    },
+    {
+      "id": 4,
+      "name": "Government Benefits",
+      "type": 1
+    },
+    {
+      "id": 5,
+      "name": "Business Income",
+      "type": 1
+    }
+  ],
+  "banks": [
+    {
+      "id": 1,
+      "name": "HDFC",
+      "img": "../../../../../assets/banks/hdfc.png"
+    },
+    {
+      "id": 2,
+      "name": "State Bank of India (SBI)",
+      "img": "../../../../../assets/banks/sbi.png"
+    },
+    {
+      "id": 3,
+      "name": "Axis Bank",
+      "img": "../../../../../assets/banks/axis.png"
+    },
+    {
+      "id": 4,
+      "name": "Indian Overseas Bank",
+      "img": "../../../../../assets/banks/india.png"
+    },
+    {
+      "id": 5,
+      "name": "Andhra Bank",
+      "img": "../../../../../assets/banks/andra.png"
+    }
+  ]
+}

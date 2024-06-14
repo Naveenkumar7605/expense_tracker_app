@@ -1,0 +1,82 @@
+<form [formGroup]="form">
+    <div class="p-1">
+        <div class="flex flex-row justify-between">
+            <div style="font-size: 16px;right: 0px;cursor: pointer;color: gray;background-color: rgba(255, 0, 0, 0.295);padding: 3px 8px;border-radius: 50px;"
+                (click)="close()"><i class="fa fa-close" aria-hidden="true"></i></div>
+            <div style="font-size: 20px;right: 0px;cursor: pointer;color: purple;" (click)="edit_content()"><i
+                    class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
+
+        </div>
+        <div class="flex flex-row xs:flex-col gap-2  xs:items-center justify-around">
+            <div>
+                <div style="height: 150px !important;width: 150px !important;cursor: pointer;object-fit: contain;position: relative;">
+                    <span class="absolute right-[10px] top-2" (click)="addPhoto()"><mat-icon>crop_free</mat-icon></span>
+                    <img [src]="default_img" class="w-full h-full" />
+                </div>
+
+            </div>
+            <div class="w-1/2 xs:w-full">
+                <div class="w-full">
+                    <mat-form-field appearence="outline" class="w-full">
+                        <mat-label>user name : </mat-label>
+                        <input matInput formControlName="desc" [disabled]="is_disabled" value="nk"
+                            formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearence="outline" class="w-full">
+                        <mat-label>email : </mat-label>
+                        <input matInput formControlName="desc" [disabled]="is_disabled" value="nk"
+                            formControlName="email">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearence="outline" class="w-full">
+                        <mat-label>mobile no : </mat-label>
+                        <input matInput formControlName="desc" [disabled]="is_disabled" value="nk"
+                            formControlName="mobno" minlength="10" maxlength="10">
+                    </mat-form-field>
+                </div>
+                <div class="flex flex-row justify-end">
+                    <button mat-button (click)="save()" [disabled]="save_btn"
+                        style="border:2px solid rgba(255, 68, 0, 0.651);border-radius: 30px;background-color: unset;">save</button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <p style="margin-top: 4px;" class="text-gray-600 header">Accounts</p>
+        <div class="flex flex-row gap-2 xs:flex-col">
+            <div class="w-[45%] flex flex-row flex-wrap gap-2 xs:w-full" id="bank_accounts">
+                <div *ngFor="let item of bank_accounts " class="space-x-2" >
+                    <div class="h-12 w-12 cursor-pointer  card" (click)="expense(item)">
+                        <img [src]="item.img" style="height: 100%;width:100%" />
+                    </div>
+                </div>
+                <div class="card h-12 ">
+                    <button matTooltip="add bank" mat-button class="payment" (click)="addCard()">
+                      <i class="fa fa-plus-square-o" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="text-gray-600 text-[12px] w-[53%] xs:w-full xs:border-none border-l-gray-400 border-l-2 pl-3"
+                style="margin-top: 6px;">
+                <div style="font-size: 10px;line-height: 1.6;color: rgb(128, 128, 128);">
+                    <div style="font-weight: 500;font-size: 12px;color: rgba(0, 0, 0, 0.87);">{{active_bank_name}}</div>
+                    <div >saving account</div>
+                    <div>mr/mrs : {{cardholder_name}}</div>
+                    <div>A/c <span>{{account_number}}</span></div>
+                </div>
+                <div style="font-size: 10px;line-height: 1.6;margin-top: 5px;color: rgb(128, 128, 128);">
+                    <div style="font-weight: 500;font-size: 12px;color: rgba(0, 0, 0, 0.87);">Account information</div>
+                    <div>total amount : <span>{{balance}}</span></div>
+                    <div>total Expense : <span>{{expense_amout}}</span></div>
+                    <div>total Income : <span>{{income_amout}}</span></div>
+                </div>
+            </div>
+        </div>
+        <!-- <hr> -->
+
+    </div>
+
+</form>

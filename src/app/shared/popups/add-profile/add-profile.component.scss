@@ -1,0 +1,8 @@
+.img_loader{
+    height: 200px;
+    width: 200px;
+    // background-color: adjust-hue($color: #000000, $degrees: 0);
+    border: 2px dotted rgba(128, 128, 128, 0.253);
+    border-radius: 10px;
+    overflow: hidden;
+}

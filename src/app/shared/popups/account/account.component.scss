@@ -1,0 +1,37 @@
+.form-field{
+    // background-color: aqua;
+    padding:10px 7px ;
+    border: 1.5px solid;
+    border-radius: 10px;
+    width: 100%;
+    @apply border-gray-300 focus:outline-1 focus:outline-yellow-200;
+}
+
+.form-field:invalid{
+    @apply border-red-300;
+}
+.form-field:valid{
+    @apply border-green-400;
+}
+
+:disabled{
+    background-color: rgba(128, 128, 128, 0.445);
+}
+
+.payment{
+    background-image: linear-gradient(45deg,rgba(0, 0, 255, 0.521),rgba(128, 0, 128, 0.76));
+    color: white;
+    text-align: center;
+    font-size: 12px !important;
+    text-indent: 2px;
+    i{
+        margin-top: -3px;
+        font-size: 16px;
+    }
+}
+
+:disabled{
+    // display: none;
+    background-color: gray !important;
+    background-image: linear-gradient(35deg black,gray) !important;
+}

@@ -1,0 +1,19 @@
+.form-field{
+    // background-color: aqua;
+    padding:10px 7px ;
+    border: 1.5px solid;
+    border-radius: 10px;
+    width: 100%;
+    @apply border-gray-300 focus:outline-1 focus:outline-yellow-200;
+}
+
+.form-field:invalid{
+    @apply border-red-300;
+}
+.form-field:valid{
+    @apply border-green-400;
+}
+
+:disabled{
+    background-color: rgba(128, 128, 128, 0.445);
+}
